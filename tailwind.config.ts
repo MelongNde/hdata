@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'blue-gradient' :'linear-gradient(272.62deg, #6CC1FF -14.72%, #003CBF 98.26%)',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },

@@ -16,7 +16,7 @@ const Navbar = () => {
 const [active, setActive] = useState("Home")
   const [toggle, setToggle] = useState(false)
   return (
-    <nav className="bg-white  w-full z-20 top-0 left-0 py-6 border-b border-gray-200">
+    <nav className="bg-white  w-full z-20 top-0 left-0 py-6">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
             <Image src={logo} className="w-[124px]" alt='logo' />
@@ -45,8 +45,8 @@ const [active, setActive] = useState("Home")
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-medium cursor-pointer text-[16px] ${
-                  active === nav.title ? "text-primary-800" : "text-dark-950"
+                className={`font-semibold hover:text-primary-900 transition ease-in-out delay-150cursor-pointer text-[16px] ${
+                  active === nav.title ? "text-primary-800" : "text-dark-700"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
@@ -61,8 +61,8 @@ const [active, setActive] = useState("Home")
             {navLinks.map((nav, index) => (
             <li
               key={nav.id}
-              className={`font-medium cursor-pointer text-[16px] ${
-                active === nav.title ? "text-primary-800" : "text-dark-950"
+              className={`font-semibold hover:text-primary-900 transition ease-in-out delay-150 cursor-pointer text-[16px] ${
+                active === nav.title ? "text-primary-800" : "text-dark-900"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
             >

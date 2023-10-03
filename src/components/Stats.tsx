@@ -13,7 +13,7 @@ const Stats = () => {
     </div>
     <div className='flex flex-row'>
       {stats.map((stat) => (
-        <div key={stat.id} className={`flex-1 flex justify-start items-center flex-col m-3`} >
+        <div key={stat.id} className={`flex-1 flex justify-start items-center flex-col m-8`} >
           <h4 className="font-semibold xs:text-[40.89px] text-[36px] xs:leading-[53.16px] leading-[43.16px] text-white">
             {stat.value}
           </h4>

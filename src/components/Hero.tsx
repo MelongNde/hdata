@@ -1,14 +1,18 @@
 import Image from "next/image"
 import heroBg from "@/assets/HDATABG.png"
-import img1 from "@/assets/img-1.jpg"
-import img2 from "@/assets/img-2.jpg"
-import img3 from "@/assets/img-3.jpg"
-import img5 from "@/assets/img-5.jpg"
-import img7 from "@/assets/img-7.jpg"
-import img8 from "@/assets/img-8.jpg"
-import img9 from "@/assets/img-9.jpg"
+import sideHeroImage from "@/assets/side-hero-image.png"
+import img1 from "@/assets/img-1.png"
+import img2 from "@/assets/img-2.png"
+import img3 from "@/assets/img-3.png"
+import img4 from "@/assets/img-4.png"
+import img5 from "@/assets/img-5.png"
+import img6 from "@/assets/img-6.png"
+import img7 from "@/assets/img-7.png"
+import img8 from "@/assets/img-8.png"
+import img9 from "@/assets/img-9.png"
 import  { Sora } from 'next/font/google'
 import styles from "@/styles/styles"
+import Bulb from '@/components/Bulb'
 
 const sora = Sora({
   weight: ['100', '200','300', '400', "500", "600", "700", "800"],
@@ -49,24 +53,43 @@ const Hero = () => {
            </div>
       </div>
       <div className={`flex-1 flex justify-center items-center md:my-0 my-10 relative`}>
-        {/* <Image src={sideHeroImage} alt="billing" className="w-[100%] h-[100%] relative z-[5]" /> */}
+        {/* <Image src={img1} alt="billing" className="w-[100%] h-[100%] relative z-[5]" /> */}
         <div className="grid gap-4 grid-cols-3">
-          <div className="rounded-xl h-[170px]">
-            <Image style={{objectFit: "fill"}} className="rounded-xl max-w-[170px] max-h-[170px]" alt="image 1"   src={img1} />
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img1} />
           </div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-[#71EFA3] w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-[#A076F9] w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
-          <div className="bg-red-600 w-[170px] rounded-xl h-[170px]">3</div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img2} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img3} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img8} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img4} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img9} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img5} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img6} />
+          </div>
+          <div >
+            <Image width={170}className="rounded-md " objectFit="contain" alt="image 1"   src={img7} />
+          </div>
         </div>
         {/* gradient start */}
-        <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
-        <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
-        <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
+        <Bulb position="left-4" text="Personalized Job Alert"/>
+        <Bulb position="top-24 right-28" text="Builded Resume"/>
+        <Bulb position="right-4 top-30" text="Receive instant update"/>
+        <Bulb position="bottom-4 " text="Robust search engine"/>
+        {/* <Bulb />
+        <Bulb text={undefined} className={undefined} /> */}
         {/* gradient end */}
       </div>
     </section>

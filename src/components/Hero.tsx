@@ -29,8 +29,8 @@ const Hero = () => {
             <span className="text-white">1 Month</span> Account
           </p>
         </div> */}
-        <div className={ ` ${sora.className} font-black flex flex-row justify-between items-center w-full`}>
-          <h1 className="flex-1 font-poppins font-black  ss:text-[72px] text-[52px] ss:leading-[100.8px] leading-[75px]">
+        <div className={ ` ${sora.className} font-extrabold flex flex-row justify-between items-center w-full`}>
+          <h1 className="flex-1 font-poppins font-extrabold  ss:text-[72px] text-[52px] ss:leading-[100.8px] leading-[75px]">
           <span className="text-dark-950">Find The</span>  <br className="sm:block hidden" />{" "}
             <span className="text-gradient ">Perfect Job </span>{" "}
           </h1>

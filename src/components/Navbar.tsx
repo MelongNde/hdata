@@ -3,6 +3,7 @@
 // Lib imports
 import { useState } from 'react'
 import Image from 'next/image'
+import { Menu } from 'lucide-react'
 
 // Local files imports
 // import '@/styles/styles'
@@ -10,7 +11,12 @@ import logo from '@/assets/logo.png'
 import menu from "@/assets/menu.svg"
 import close from '@/assets/close.svg'
 import { navLinks } from '../constants'
-// import { Button } from './ui/button'
+// import { Button } from './ui/Button'
+
+import { Moon, Sun } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { ThemeToggle } from './ThemeToggle'
 
 const Navbar = () => {
 const [active, setActive] = useState("Home")
@@ -21,20 +27,22 @@ const [active, setActive] = useState("Home")
         <a href="/" className="flex items-center">
             <Image src={logo} className="w-[124px]" alt='logo' />
         </a>
-        <div className="flex md:order-2">
-            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</button>
-            <button 
-              data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false"
+        <div className="flex gap-2 md:order-2">
+            <ThemeToggle />
+            <Button>Login</Button>
+            <Button 
+              data-collapse-toggle="navbar-sticky"  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false"
               onClick={() => {
                 console.log('Toggled')
                 setToggle(!toggle)
               }}
               >
               <span className="sr-only">Open main menu</span>
-              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              {/* <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-              </svg>
-            </button>
+              </svg> */}
+              <Menu />
+            </Button>
         </div>
         <div
           className={`${

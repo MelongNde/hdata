@@ -14,6 +14,8 @@ import  { Sora } from 'next/font/google'
 import styles from "@/styles/styles"
 import Bulb from '@/components/Bulb'
 
+import { Button } from "./ui/button"
+
 const sora = Sora({
   weight: ['100', '200','300', '400', "500", "600", "700", "800"],
   subsets: ['latin']
@@ -38,18 +40,18 @@ const Hero = () => {
         <h1 className={`${sora.className} text-dark-950 font-poppins font-black ss:text-[68px] text-[52px] ss:leading-[100.8px] leading-[75px] w-full`}>
         You Deserves
         </h1>
-        <p className={`${sora.className} text-dark-900 text-[18px] leading-[30.8px] max-w-[470px] mt-5`}>
+        <p className={` text-dark-900 text-[18px] leading-[30.8px] max-w-[470px] mt-5`}>
           We utilize our strengths to facilitate the success of our participants, 
           enabling them to establish enduring careers that benefit themselves,
           their families, and the community as a whole.
         </p>
         <div className="flex justify-self-center text-center flex-row md:flex-row gap-6 mt-5">
                <div className="">
-                 <button type="button" className="text-white py-4 px-8 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+                 <button type="button" className="text-white py-4 px-8 bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm text-center mr-3 md:mr-0">Get started</button>
                </div>
-               <div className="">
+               {/* <div className="">
                  <button type="button" className="text-white py-4 px-8 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">How It work ?</button>
-               </div>
+               </div> */}
            </div>
       </div>
       <div className={`flex-1 flex justify-center items-center md:my-0 my-10 relative`}>

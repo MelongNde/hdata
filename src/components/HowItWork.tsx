@@ -7,7 +7,7 @@ const HowItWork = () => {
         <div className='flex flex-col gap-2 justify-center max-w-[500px]'>
             <h1 className='font-bold text-3xl'>
                 How does <br />
-                <span className='text-primary-800'>Harvest Data</span> work?
+                <span className='text-primary'>Harvest Data</span> work?
             </h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur. Rhoncus congue nunc pellentesque mauris at. Varius purus vulputate aliquam risus in nec pretium. Elit posuere enim praesent fermentum commodo neque ut. Tortor dignissim 

@@ -28,13 +28,13 @@ const JobCard = () => {
         </div>        
       </div>
       <div className="flex flex-row mt-2 gap-2">
-        <div className="py-1 px-4 text-primary-700 font-medium text-xs bg-primary-300 rounded-3xl ">$73,141+ monthly</div>
+        <div className="py-1 px-4 text-primary-700 font-medium text-xs bg-primary rounded-3xl ">$73,141+ monthly</div>
         <div className="py-1 px-4 text-[#FB743C] text-xs font-medium bg-[#FFE1CC]   rounded-3xl ">Full time</div>
       </div>
       <p className="mt-4 whitespace-normal text-justify text-dark-800 text-sm">
         Lorem ipsum dolor sit amet consectetur. Massa mauris erat interdum est egestas sodales arcu adipiscing. Sodales mauris massa convallis sed viverra diam facilisis. Nec pulvinar.
       </p>
-      <button type="button" className="mt-4 w-full justify-center bg-primary-700 py-3 hover:bg-primary-800 font-medium text-white rounded-md">
+      <button type="button" className="mt-4 w-full justify-center bg-primary py-3 hover:bg-primary-800 font-medium text-white rounded-md">
         Get the job
       </button>
     </div>

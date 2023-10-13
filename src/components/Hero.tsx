@@ -14,6 +14,9 @@ import  { Sora } from 'next/font/google'
 import styles from "@/styles/styles"
 import Bulb from '@/components/Bulb'
 
+import herotop from "@/assets/herotop.png"
+import herotop2 from "@/assets/herotop-2.png"
+
 import { Button } from "./ui/button"
 
 const sora = Sora({
@@ -23,7 +26,15 @@ const sora = Sora({
 
 const Hero = () => {
   return (
-    <section id="home" className="flex md:flex-row flex-col sm:py-16 py-6">
+    <section id="home" className="flex md:flex-row flex-col sm:py-16 py-6 bg-dark500">
+      <div className="absolute z-0  top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+        <div className="w-[108rem] z-100 flex-none flex justify-end">
+        <Image src={herotop2} alt="" className="w-[90rem]    flex-none max-w-none  " decoding="async" />
+        {/* <Image src={herotop} alt="" className="w-[90.75rem] h-[30rem] flex-none max-w-none " decoding="async" /> */}
+             
+          
+        </div>
+      </div>
       <div className="flex-1 flex justify-center items-start flex-col xl:px-0 sm:px-16 px-6">
         {/* <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
         <p className="font-normal text-dark-800 text-[18px] leading-[30.8px]">
@@ -40,7 +51,7 @@ const Hero = () => {
         <h1 className={`${sora.className} text-dark-950 font-poppins font-black ss:text-[68px] text-[52px] ss:leading-[100.8px] leading-[75px] w-full`}>
         You Deserves
         </h1>
-        <p className={` text-dark-900 text-[18px] leading-[30.8px] max-w-[470px] mt-5`}>
+        <p className={`text-muted-foreground text-[18px] leading-[30.8px] max-w-[470px] mt-5`}>
           We utilize our strengths to facilitate the success of our participants, 
           enabling them to establish enduring careers that benefit themselves,
           their families, and the community as a whole.

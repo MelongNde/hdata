@@ -20,6 +20,7 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        blackk: "hsl(var(--blackk))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -70,6 +71,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // customs
+      dark: {
+        dark500: "#ff0000"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -7,21 +7,19 @@ export const candidateSignInSchema = z.object({
         .max(255),
     lastName: z
         .string()
+        .min(3, { message: "Your name should not be that short" })
         .max(255),
     placeOfBirth: z
         .string()
+        .min(3, { message: "Your name should not be that short" })
         .max(255),
     dateOfBirth: z
-        .date({
-            required_error: "Please select a date and time",
-            invalid_type_error: "That's not a date!",
-          }),
+    .preprocess((arg) => {
+        if (typeof arg == "string" || arg instanceof Date) return new Date(arg);
+        }, z.date()),
     gender: z
-        .enum(['Female', 'Male']),
-    adresseLine1: z
-        .string()
-        .min(2),
-    adresseLine2: z
+        .string(),
+    adresseLine: z
         .string()
         .min(2),
     city: z
@@ -35,12 +33,19 @@ export const candidateSignInSchema = z.object({
         .min(2),
     zipCode: z
         .string(),
-    phoneNumber1: z
-    .number(),
-    phoneNumber2: z
-    .number(),
-    email: z
-        .string(),
+    phoneNumberOne: z
+    .string()
+    .refine((val) => !isNaN(val as unknown as number), {
+        message: "Pnone number should be a number",
+    }),
+    phoneNumberTwo: z
+    .string()
+    .refine((val) => !isNaN(val as unknown as number), {
+        message: "Phone number should be a number",
+    }),
+    emailAddress: z
+        .string()
+        .email(),
     userName: z
         .string()
         .min(3, { message: "Your name should not be that short" })

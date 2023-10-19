@@ -3,7 +3,56 @@
 @tailwind utilities;
 
 
+.rdp-caption_dropdowns{
+  display: flex;
+  flex-direction: row;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 12px !important; 
+}
 
+
+.rdp-caption_dropdowns > .rdp-vhidden {
+  display: none;
+} 
+
+.rdp-dropdown_year > div, .rdp-dropdown_month > div  {
+  display: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary)); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1442a0; 
+}
+/* .rdp-dropdown_month > div {
+  display: none;
+} */
+
+
+/* 
+make hidden
+
+
+
+*/
 /* background: linear-gradient(272.62deg, #6CC1FF -14.72%, #003CBF 98.26%); */
 
 .text-gradient {

@@ -48,7 +48,7 @@ export default function Login({ className, ...props }: UserAuthFormProps) {
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
-          Sign In
+          Sign Up
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <Image layout="" fill alt="login image" className="absolute  inset-0 object-cover " src={LoginImage} ></Image>
@@ -76,8 +76,7 @@ export default function Login({ className, ...props }: UserAuthFormProps) {
                   <Button variant="outline">
                     <FcGoogle className="mr-2 h-4 w-4" />
                     Google
-                  </Button>
-                  
+                  </Button>                  
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center">

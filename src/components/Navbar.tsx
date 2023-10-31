@@ -21,8 +21,15 @@ import { LanguageToggle } from './LanguageToggle'
 
 import Link from 'next/link'
 
-const Navbar = () => {
-const [active, setActive] = useState("Home")
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+
+
+const Navbar = async () => {
+
+  // const session = await getServerSession(authOptions)
+
+  const [active, setActive] = useState("Home")
   const [toggle, setToggle] = useState(false)
   return (
     <nav className="bg-white  w-full z-200 top-0 left-0 py-6">

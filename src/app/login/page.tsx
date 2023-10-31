@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React from "react"
 import Image from "next/image"
@@ -24,20 +24,49 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@radix-ui/react-dropdown-menu'
 import { Button } from "@/components/ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { useForm } from "react-hook-form"
+
+import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export default function Login({ className, ...props }: UserAuthFormProps) {
-    const [isLoading, setIsLoading] = React.useState<boolean>(false)
+const FormSchema = z
+  .object({
+    email: z.string().min(1, 'Email is required').email('Invalid email'),
+    password: z
+      .string()
+      .min(1, 'Password is required')
+      .min(8, 'Password must have than 8 characters')
+  })
 
-    async function onSubmit(event: React.SyntheticEvent) {
-      event.preventDefault()
-      setIsLoading(true)
-  
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 3000)
+  const Login = () => {
+    const router = useRouter()
+    const onSubmit = async (datas: z.infer<typeof FormSchema>) => {
+      const signInData = await signIn('credentials', {
+        email: datas.email,
+        password: datas.password, 
+        redirect: false
+      })
+      
+      if(signInData?.error) {
+        console.log(signInData.error)
+      } else {
+        router.push('/admin')
+      }
     }
+
+    const form = useForm<z.infer<typeof FormSchema>>({
+      resolver: zodResolver(FormSchema),
+      defaultValues: {
+        email: "",
+        password: ""
+      }
+    })
+
   return (
     <>
      <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
@@ -88,17 +117,51 @@ export default function Login({ className, ...props }: UserAuthFormProps) {
                     </span>
                   </div>
                 </div>
-                <div className="grid gap-2">
-                  <Label >Email</Label>
-                  <Input id="email" type="email" placeholder="m@example.com" />
-                </div>
-                <div className="grid gap-2">
-                  <Label>Password</Label>
-                  <Input id="password" type="password" />
-                </div>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)}>
+                    <div className="space-y-2 flex flex-col">
+                      <FormField
+                        control={form.control}
+                        name='email'
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                              <Input
+                                type='email'
+                                placeholder='me@example.com'
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name='password'
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Password</FormLabel>
+                            <FormControl>
+                              <Input
+                                type='password'
+                                placeholder='Enter your password'
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    <Button className='w-full mt-6' type='submit'>
+                      Login
+                    </Button>
+                  </form>
+                </Form>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Login</Button>
               </CardFooter>
             </Card>
           </div>
@@ -107,3 +170,5 @@ export default function Login({ className, ...props }: UserAuthFormProps) {
     </>
   )
 }
+
+export default Login
